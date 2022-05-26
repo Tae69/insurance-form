@@ -33,7 +33,7 @@ export default defineComponent({});
         >{{ thousandSeparator(form.premium) }}{{ form.currency }}</span
       >
     </p>
-    <div>
+    <div class="flex justify-center">
       <button
         data-testid="back"
         type="button"

@@ -221,7 +221,7 @@ export default defineComponent({
       </h1>
     </div>
 
-    <div>
+    <div class="flex justify-center">
       <button
         data-testid="back"
         type="button"
