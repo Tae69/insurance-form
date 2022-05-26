@@ -4,7 +4,10 @@ import validateForm from "../validateForm";
 
 describe("ValidateForm", () => {
   it("should warn empty name if name is empty", () => {
-    const errors = validateForm({ name: "", age: "12" });
+    let errors = validateForm({ name: "", age: "12" });
+    expect(errors.name).toEqual("Name must not be empty");
+
+    errors = validateForm({ name: " ", age: "12" });
     expect(errors.name).toEqual("Name must not be empty");
   });
 
@@ -14,7 +17,10 @@ describe("ValidateForm", () => {
   });
 
   it("should not warn empty name if name is filled", () => {
-    const errors = validateForm({ name: "asdf", age: "12" });
+    let errors = validateForm({ name: "asdf", age: "12" });
+    expect(errors.name).not.toBeDefined();
+
+    errors = validateForm({ name: "asdf test", age: "12" });
     expect(errors.name).not.toBeDefined();
   });
 

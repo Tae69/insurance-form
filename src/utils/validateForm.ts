@@ -9,7 +9,7 @@ export default function validateForm(
     if (!ignoreEmpty) {
       errors.name = "Name must not be empty";
     }
-  } else if (/^[a-z]+$/i.test(data.name) === false) {
+  } else if (/^[a-z\s]+$/i.test(data.name) === false) {
     errors.name = "Name must contains letters only";
   }
 
